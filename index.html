@@ -11,9 +11,8 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
-					<h1><strong>Crypth</strong><br />
-					Ressources.<br />
-					</h1>
+					<a href="#two" class="button primary icon solid" style="font-size: 20px; color:rgb(255, 255, 255);">Projets récents</a> </br> </br>
+                    <a href="#three" class="button icon solid" style="font-size: 20px; color:rgb(255, 255, 255);">Codes</a>
 				</div>
 			</header>
 
@@ -40,8 +39,8 @@
 								<h3>Protection numworks einstein</h3>
 								<p>Entièrement personnalisable.</p></br>
 								<ul class="actions">
-									<li><a href="#" class="button primary icon solid fa-download">STL einstein</a></li>
-									<li><a href="#" class="button icon solid fa-download">STL de base</a></li>
+									<li><a href="download/case einstein.stl" class="button primary icon solid fa-download">STL einstein</a></li>
+									<li><a href="download/case.stl" class="button icon solid fa-download">STL de base</a></li>
 								</ul>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
@@ -50,7 +49,7 @@
 								<p>Il peut s'utiliser avec ou sans clavier ou ecran.</p></br>
 								<ul class="actions">
 									<li><a href="download/desktop.stl" class="button primary icon solid fa-download">STL PC</a></li>
-									<li><a href="#" class="button icon solid fa-download">Vidéo</a></li>
+									<li><a href="https://youtu.be/Crfaxoot-WM" target="_blank" class="button icon solid"	>Vidéo</a></li>
 								</ul>
 							</article>
 							<article class="col-6 col-12-xsmall work-item">
@@ -68,13 +67,14 @@
 								<p>Imprimable en 3D.</p></br>
 								<ul class="actions">
 									<li><a href="download/souris.stl" class="button primary icon solid fa-download">STL</a></li>
-									<!-- <li><a href="#" class="button icon solid fa-download">Icon</a></li> -->
+									<li><a href="https://youtu.be/3vzBMT9mDTQ" target="_blank" class="button icon solid">Vidéo</a></li>
 								</ul>
 						</div>
-						<!-- <ul class="actions">
-							<li><a href="#" class="button">Full Portfolio</a></li>
-						</ul>  -->
+						<ul class="actions">
+							<li><a href="projets.html" class="button">Autres Projets</a></li>
+						</ul>
 					</section>  
+					<section id="three">
 					<h1>Codes</h1>
 					<h3>Code batch informations systemes</h3>
 							<pre><code>
@@ -113,38 +113,13 @@ explorer c:\Users\%username%\AppData\local\temp
 timeout/T 02/NOBREAK
 echo FINI
 exit
-							</code></pre>
-							<h3>Code batch copie</h3>
-							<pre><code>
-@echo off
-cls
-setlocal EnableDelayedExpansion
-set USB=
-for /f "tokens=1-5" %%a in ('wmic logicaldisk list brief') do if %%b EQU 2 if %%d GTR 0 Set USB=!USB! %%a
-md copie
-set /p dossier="Choisissez un dossier: "
-xcopy "C:\Users\%username%\%dossier%" "%USB%\copie" /e /i
-timeout/T 02/NOBREAK
-echo FINI
-exit
-							</code></pre>
-							<h3>Code arduino plateau rotatif</h3>
-							<pre><code>
-#include <Stepper.h>
-double stepsPerRevolution = 2048;
-Stepper myStepper(stepsPerRevolution, 8, 10, 9, 11);
-void setup() {
-	myStepper.setSpeed(2); 
-Serial.begin(9600);
-}
-									
-									
-void loop() { 
-	myStepper.step(stepsPerRevolution);
-}
-							</code></pre>
-							
+                            </code></pre>
+<ul class="actions">
+	<li><a href="codes.html" class="button">Autres Codes</a></li>
+</ul>
 
+							
+					</section>
 
 
 			</div>
@@ -158,6 +133,7 @@ void loop() {
 						
 					</ul>
 				</div>
+				
 			</footer>
 
 		<!-- Scripts -->
