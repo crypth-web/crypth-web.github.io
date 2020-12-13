@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Crypth</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<h1><strong>Crypth</strong><br />
+					Ressources.<br />
+					</h1>
+				</div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h1>Base de donnée.</h1>
+						</header>
+						<h3>Vous pouvez retrouver ici tout les fichiers STL, schémas, images et les codes.</h3>
+						<!-- <ul class="actions">
+							<li><a href="#" class="button">En lire plus</a></li>
+						</ul>
+					</section> --> </br>
+
+				<!-- Two -->
+					<section id="two">
+						<h2>Projets récents</h2>
+						<div class="row">
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
+								<h3>Protection numworks einstein</h3>
+								<p>Entièrement personnalisable.</p></br>
+								<ul class="actions">
+									<li><a href="#" class="button primary icon solid fa-download">STL einstein</a></li>
+									<li><a href="#" class="button icon solid fa-download">STL de base</a></li>
+								</ul>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
+								<h3>Pc portable modulaire</h3>
+								<p>Il peut s'utiliser avec ou sans clavier ou ecran.</p></br>
+								<ul class="actions">
+									<li><a href="download/desktop.stl" class="button primary icon solid fa-download">STL PC</a></li>
+									<li><a href="#" class="button icon solid fa-download">Vidéo</a></li>
+								</ul>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
+								<h3>Pommeau de douche</h3>
+								<p>Conçu pour etre réalisable en bambou.</p></br>
+								<ul class="actions">
+									<li><a href="download/pommeaudedouche.stl" class="button primary icon solid fa-download">STL</a></li>
+									<!-- <li><a href="#" class="button icon solid fa-download">Icon</a></li> -->
+								</ul>
+							</article>
+							<article class="col-6 col-12-xsmall work-item">
+								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
+								<h3>Souris</h3>
+								<p>Imprimable en 3D.</p></br>
+								<ul class="actions">
+									<li><a href="download/souris.stl" class="button primary icon solid fa-download">STL</a></li>
+									<!-- <li><a href="#" class="button icon solid fa-download">Icon</a></li> -->
+								</ul>
+						</div>
+						<!-- <ul class="actions">
+							<li><a href="#" class="button">Full Portfolio</a></li>
+						</ul>  -->
+					</section>  
+					<h1>Codes</h1>
+					<h3>Code batch informations systemes</h3>
+							<pre><code>
+@echo off
+cls
+setlocal EnableDelayedExpansion
+set USB=
+for /f "tokens=1-5" %%a in ('wmic logicaldisk list brief') do if %%b EQU 2 if %%d GTR 0 Set USB=!USB! %%a
+md Report_info_system
+set /p wifipassword="Quel est le nom wifi: "
+echo Travail en cours...
+ipconfig>%USB%\Report_info_system\ipconfig.txt 
+echo IP:OK
+hostname>%USB%\Report_info_system\hostname.txt 
+echo hostname:OK
+netsh wlan show profile name=%wifipassword% key=clear>%USB%\Report_info_system\wifipassword.txt
+echo wifipassword:OK
+ver>%USB%\Report_info_system\versionwindows.txt 
+echo versionWindows:OK
+systeminfo>%USB%\Report_info_system\systeminfo.txt 
+echo systeminformation:OK
+netview>%USB%\Report_info_system\netview.txt
+echo ordinateursreseau:OK
+cls
+timeout/T 02/NOBREAK
+echo FINI
+exit
+							</code></pre>
+							<h3>Code batch temp</h3>
+							<pre><code>
+@echo off
+cls
+setlocal EnableDelayedExpansion
+explorer c:\windows\temp
+explorer c:\Users\%username%\AppData\local\temp
+timeout/T 02/NOBREAK
+echo FINI
+exit
+							</code></pre>
+							<h3>Code batch copie</h3>
+							<pre><code>
+@echo off
+cls
+setlocal EnableDelayedExpansion
+set USB=
+for /f "tokens=1-5" %%a in ('wmic logicaldisk list brief') do if %%b EQU 2 if %%d GTR 0 Set USB=!USB! %%a
+md copie
+set /p dossier="Choisissez un dossier: "
+xcopy "C:\Users\%username%\%dossier%" "%USB%\copie" /e /i
+timeout/T 02/NOBREAK
+echo FINI
+exit
+							</code></pre>
+							<h3>Code arduino plateau rotatif</h3>
+							<pre><code>
+#include <Stepper.h>
+double stepsPerRevolution = 2048;
+Stepper myStepper(stepsPerRevolution, 8, 10, 9, 11);
+void setup() {
+	myStepper.setSpeed(2); 
+Serial.begin(9600);
+}
+									
+									
+void loop() { 
+	myStepper.step(stepsPerRevolution);
+}
+							</code></pre>
+							
+
+
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="icons">
+					</ul>
+					<ul class="copyright">
+						
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
